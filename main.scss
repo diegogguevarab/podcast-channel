@@ -3,15 +3,114 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-size: 16px;
   @media screen and (max-width: $mobile-max-width) {
-    font-size: 12px;
+    font-size: 14px;
   }
-  font-size: 14px;
-
 }
-@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono&display=swap');
-@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap');
+@import url("https://fonts.googleapis.com/css?family=IBM+Plex+Mono&display=swap");
+@import url("https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap");
 @import "styles/containers";
 @import "styles/texts";
+//TODO get navbar into _containers.scss
+header {
+  width: 100%;
+  top: 0;
+  height: 20px;
+  min-height: 50px;
+  padding: 10px 30px;
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  z-index: 100; /* z-index alto para que quede por encima de todo */
+}
+header nav ul {
+  width: 100%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
 
-
+  top: 50px;
+  height: 0px;
+  right: 0;
+  list-style: none;
+  background: #fafafa;
+  overflow: hidden;
+}
+header nav ul li a {
+  text-decoration: none;
+  color: #000;
+  font-size: 16px;
+  padding: 15px;
+  display: block;
+  position: relative;
+}
+input[type="checkbox"]:checked ~ ul {
+  height: 240px;
+}
+.menu_elementos {
+  display: block;
+  padding-top: 5px;
+}
+.menu_elementos input {
+  display: block;
+  position: absolute;
+  opacity: 0;
+  width: 40px;
+  height: 32px;
+  z-index: 2;
+}
+.menu_elementos span {
+  display: block;
+  position: relative;
+  width: 25px;
+  height: 3px;
+  margin-bottom: 5px;
+  background: #000;
+}
+.menu_elementos span:first-child {
+  transform-origin: -1px 3px;
+  transform-origin: 0% 0%;
+}
+.menu_elementos span:nth-last-child(2) {
+  transform-origin: -1px 3px;
+  transform-origin: 0% 100%;
+}
+.menu_elementos input:checked ~ span {
+  transform-origin: -1px 3px;
+  opacity: 1;
+  transform: rotate(45deg) translate(1px, 2px);
+}
+.menu_elementos input:checked ~ span:nth-last-child(3) {
+  opacity: 0;
+}
+.menu_elementos input:checked ~ span:nth-last-child(2) {
+  transform-origin: -1px 3px;
+  transform: rotate(-45deg) translate(-2px, 4px);
+}
+@media screen and (min-width: 768px) {
+  header {
+    position: relative;
+  }
+  header nav ul {
+    display: flex;
+    flex-direction: row;
+    height: 80px;
+    position: absolute;
+    top: 0;
+    right: 10px;
+    width: auto;
+    background: #fff;
+  }
+  header nav ul li a {
+    text-decoration: none;
+    font-size: 16px;
+    line-height: 20px;
+    padding: 10px 15px 15px 10px;
+  }
+  .menu_elementos input,
+  .menu_elementos span {
+    display: none;
+  }
+}
