@@ -8,12 +8,12 @@
     <link rel="stylesheet" href="styles/styles.css">
     <script src="https://kit.fontawesome.com/817fdba1f7.js" crossorigin="anonymous"></script>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <title>TechCast</title>
+    <title>Podcast Channel</title>
 </head>
 
 <body>
     <header>
-        <img src="images\logo.svg" alt="txt" class="logo" />
+        <img src="images/logo.svg" alt="txt" class="logo" />
         <nav>
             <div class="menu_elementos">
                 <input type="checkbox" id="checkbox" />
@@ -29,16 +29,23 @@
             </div>
         </nav>
     </header>
-    <div id="intro">
-        <h1>¡Bienvenidos a TechCast!</h1>
-        <p>Un podcast que explora el mundo de la programación. Nuevos episodios, todos los jueves cada 15 días.</p>
+    <div id="intro" class="container-intro">
+        <div>
+            <h1>Hello <span class="crossed">world</span> pale blue dot<span class="colored">.</span></h1>
+        </div>
+        <div>
+            <p>El portal de podcasts que explora el mundo de la programación y la tecnología. Nuevos episodios, todos
+                los jueves cada 15 días.</p>
+        </div>
+        <div class="container-intro-button">
+            <button>CONOCÉ MÁS</button>
+        </div>
     </div>
-    <div id=#episodes class="container-shaped-top-end">
-        <div class="container-title">
-            <i class="fas fa-headphones"></i>
+    <div id="episodes" class="container-shaped-top-end">
+        <div class="container-shaped-top-end-title">
             <h2>Episodios</h2>
         </div>
-        <div class="container-content">
+        <div class="container-shaped-top-end-content">
             <div><iframe src="https://open.spotify.com/embed-podcast/show/2ySVrxGkN6n6frMTo9Nsrt"
                     allow="encrypted-media"></iframe>
             </div>
@@ -53,14 +60,28 @@
             </div>
         </div>
     </div>
-    <div id=#news class="container-shaped-top">
-        <div class="container-title">
-            <i class="fas fa-headphones"></i>
-            <h2>¿Quieres las últimas novedades?</h2>
+    <img id="phone" src="images/phone.png" alt="phone">
+    <div id="we" class="container-description">
+        <h2>De dónde venimos</h2>
+        <p>Our posturings, our imagined self-importance, the delusion that we have some privileged position in the
+            Universe, are challenged by this point of pale light.</p>
+        <p>Our planet is a lonely speck in the great enveloping
+            cosmic dark. In our obscurity, in all this vastness, there is no hint that help will come from elsewhere to
+            save us from ourselves.</p>
+    </div>
+    <div id="gallery"> </div>
+    <div id="news" class="container-shaped-top">
+        <div class="container-shaped-top-title">
+            <h2>¿Querés las últimas novedades?</h2>
+        </div>
+        <div class="container-shaped-top-content">
+            <button>ESCUCHÁ LOS EPISODIOS</button>
         </div>
     </div>
     <div class="footer">
-        <p>© 2019 — TechCast</p>
+        <div>
+            <p>© 2019 — Hello blue pale dot </p>
+        </div>
         <div>
             <i class="fab fa-spotify"></i>
             <i class="fab fa-instagram"></i>
