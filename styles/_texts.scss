@@ -3,32 +3,87 @@ h2,
 h3,
 h4,
 h5 {
-  font-weight: normal;
+  color: $color_primary;
+  font-weight: 400;
   font-family: "IBM Plex Sans", sans-serif;
+  letter-spacing: 0;
 }
 h1 {
   font-size: 4rem;
+  @media screen and (max-width: $mobile-max-width) {
+    font-size: 2.5rem;
+  }
 }
 h2 {
   font-size: 3.5rem;
+  @media screen and (max-width: $mobile-max-width) {
+    font-size: 2.5rem;
+  }
 }
 h3 {
   font-size: 3rem;
+  @media screen and (max-width: $mobile-max-width) {
+    font-size: 2rem;
+  }
 }
 h4 {
   font-size: 2.5rem;
+  @media screen and (max-width: $mobile-max-width) {
+    font-size: 2rem;
+  }
 }
 h5 {
   font-size: 2rem;
+  @media screen and (max-width: $mobile-max-width) {
+    font-size: 1.5rem;
+  }
 }
 h6 {
   font-size: 1.5rem;
+  @media screen and (max-width: $mobile-max-width) {
+    font-size: 1.5rem;
+  }
 }
-p, li, a {
+p,
+li,
+a {
+  color: $color_primary;
   font-size: 1rem;
   font-family: "IBM Plex Mono", monospace;
+  letter-spacing: 0;
+  text-align: justify;
+}
+button {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 18px;
+  font-weight: 500;
+  color: $color_primary;
+  letter-spacing: 0;
+  line-height: 24px;
+  @media screen and (max-width: $mobile-max-width) {
+    font-size: 16px;
+  }
 }
 i {
   margin: 0 1rem 0 0;
   font-size: 18px;
+}
+.crossed {
+  color: $color_primary;
+  font-size: 4rem;
+  font-weight: 400;
+  font-family: "IBM Plex Sans", monospace;
+  text-decoration: line-through;
+  @media screen and (max-width: $mobile-max-width) {
+    font-size: 2.5rem;
+  }
+}
+.colored {
+  color: $color_change;
+  font-size: 4rem;
+  font-weight: 400;
+  font-family: "IBM Plex Sans", monospace;
+  @media screen and (max-width: $mobile-max-width) {
+    font-size: 2.5rem;
+  }
 }
