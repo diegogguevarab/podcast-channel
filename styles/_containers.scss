@@ -3,68 +3,131 @@
   width: 100%;
   display: grid;
   grid-template-rows: auto auto;
-  background-image: linear-gradient(225deg, #0000ff 0%, #0000a3 100%);
+  background-image: linear-gradient(225deg, $color_init_gradient 0%, $color_end_gradient 100%);
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    color: $color_secondary;
+  }
 }
 %footer {
   left: 0;
   bottom: 0;
   width: 100%;
-  background-color: $color-secondary;
-  color: $color-primary;
+  background-color: $color_secondary;
+  color: $color_primary;
 }
-.container- {
-  &shaped-top-end {
+.container {
+  &-shaped-top-end {
     @extend %container;
-    clip-path: polygon(0 20%, 100% 0, 100% 80%, 0 100%);
+    clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
+    @media screen and (max-width: $smallPC-max-width) {
+      clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%);
+    }
     @media screen and (max-width: $mobile-max-width) {
       clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%);
     }
+    &-content {
+      margin: 1rem 3rem 15%;
+      display: grid;
+      grid-template-columns: auto auto;
+      grid-gap: 3rem;
+      @media screen and (max-width: $smallPC-max-width) {
+        margin: 1rem 2rem 20%;
+      }
+      @media screen and (max-width: $mobile-max-width) {
+        justify-content: center;
+        margin: 1rem 1rem 30%;
+        grid-template-columns: auto;
+      }
+    }
+    &-title {
+      margin: 10% 5rem 1rem;
+      justify-content: end;
+      @media screen and (max-width: $mobile-max-width) {
+        margin: 25% 1rem 1rem;
+      }
+    }
+    z-index: 0;
   }
-  &shaped-top {
+  &-shaped-top {
     @extend %container;
     justify-content: center;
     clip-path: polygon(0 20%, 100% 0, 100% 100%, 0 100%);
     @media screen and (max-width: $mobile-max-width) {
-      clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%);
+      clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+    }
+    &-content {
+      margin: 1rem 3rem 15%;
+      display: flex;
+      align-content: center;
+      justify-content: center;
+      @media screen and (max-width: $smallPC-max-width) {
+        margin: 1rem 2rem 20%;
+      }
+      @media screen and (max-width: $mobile-max-width) {
+        justify-content: center;
+        margin: 1rem 1rem 30%;
+        grid-template-columns: auto;
+      }
+    }
+    &-title {
+      margin: 10% 5rem 1rem;
+      align-items: center;
+      justify-content: center;
+      @media screen and (max-width: $mobile-max-width) {
+        margin: 25% 1rem 1rem;
+      }
+    }
+    button {
+      width: 20rem;
     }
   }
-  &title {
-    margin: 15% 1rem 1rem;
-    align-items: center;
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: end;
-    h1 {
-      color: $color-secondary;
-    }
-    i {
-      font-size: 3rem;
-      color: $color-secondary;
-    }
+  &-intro {
+    margin: 5% 15% 5% 15%;
+    padding: 5%;
+    text-align: left;
     @media screen and (max-width: $mobile-max-width) {
       margin: 25% 1rem 1rem;
     }
+    &-title {
+      margin: 10% 5rem 1rem;
+      align-items: center;
+      justify-content: center;
+      @media screen and (max-width: $mobile-max-width) {
+        margin: 25% 1rem 1rem;
+      }
+    }
+    button {
+      margin-top: 2rem;
+      width: 15rem;
+    }
   }
-  &content {
-    margin: 1rem 3rem 15%;
-    display: grid;
-    grid-template-columns: auto auto;
-    grid-gap: 3rem;
-    @media screen and (max-width: $smallPC-max-width) {
-      margin: 1rem 2rem 20%;
+  &-description {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: right;
+    align-content: space-around;
+    margin: -30% 15% 15% 50%;
+    p {
+      text-align: left;
     }
     @media screen and (max-width: $mobile-max-width) {
       justify-content: center;
-      margin: 1rem 1rem 30%;
-      grid-template-columns: auto;
+      margin: 0 3rem 0;
     }
+  }
+  &-topics {
   }
 }
 .footer {
   @extend %footer;
-  padding: 0px 10% 0px;
+  padding: 2rem 10% 2rem;
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: row column;
   justify-content: space-between;
   text-align: center;
   @media screen and (max-width: $mobile-max-width) {
@@ -77,4 +140,24 @@ iframe {
   border: 0px;
   height: 232px;
   width: 100%;
+}
+button {
+  border: none;
+  background-color: $color_button;
+  width: max-content;
+  height: 3rem;
+  &:hover {
+    background-image: linear-gradient(225deg, #0000fe 0%, #00f0b8 100%);
+  }
+}
+img#phone {
+  height: 660px;
+  margin: -10% 15% 0;
+  z-index: 50;
+  position: relative;
+  @media screen and (max-width: $mobile-max-width) {
+    height: auto;
+    width: 100%;
+    margin: -25% 0 0;
+  }
 }
